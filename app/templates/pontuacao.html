@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1 class="text-center m-lg-5">Ranking</h1>
+
+<div class="container text-center">
+    <h1 class="text-center">A sua pontuação atual é: {{usuario['pontos']}} pontos</h1>
+    <h1 class="text-center">Você está em {{posicao}}º lugar no nosso ranking!</h1>
+
+    <div class="container mt-4">
+        <table class="table table-striped tabela-customizada">
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Nome</th>
+                    <th>Pontuação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ usuario.nome }}</td>
+                    <td>{{ usuario.pontos }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

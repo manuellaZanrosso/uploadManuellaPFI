@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Css -->
+    <link href="./../static/css/index.css" rel="stylesheet">
+
+    <link rel="icon" href="./../static/css/img/icone.png">
+    <!--icone da página-->
+
+    <title>A Lista Negra</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <img class="navbar-brand"  src="../static/css/img/logo.png" height="50" width="50" alt="">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link fs-5 fw-semibold" href="/">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle fs-5 fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Perfil
+                </a>
+                <ul class="dropdown-menu">
+                  {% if session['id'] is defined %}
+                    <li><a class="dropdown-item" href="/sair">Sair</a></li>
+                  {% else %}
+                    <li><a class="dropdown-item" href="/cadastrar">Cadastre-se</a></li>
+                    <li><a class="dropdown-item" href="/login">Login</a></li>
+                  {% endif %}
+                </ul>
+                <li class="nav-item">
+                  <a class="nav-link fs-5 fw-semibold" href="/quiz/0">Quiz</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-5 fw-semibold" href="/pontuacao">Ranking</a>
+                </li>
+                {% if session['adm'] %}
+                  <li class="nav-item">
+                      <a class="nav-link fs-5 fw-semibold" href="/adm">Administrar</a>
+                  </li>
+                {% endif %}
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+
+</html>

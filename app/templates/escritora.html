@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container-sm text-start">
+    <h1 class="my-4">{{escritora.nome}}</h1>
+    <p class="fs-5">
+        {{escritora.biografia}}
+    </p>
+
+    <div class="my-1">
+        <i class='bx bxs-star fs-4'></i>
+        {{escritora.data_nascimento}}
+    </div>
+
+    {% if escritora['data_falecimento'] != '9999-12-01' %}
+
+    <div class="my-1">
+        <i class='bx bxs-bible fs-4'></i>
+        {{escritora.data_falecimento}}
+    </div>
+
+    {% endif %}
+
+    <div>
+        <i class='bx bxl-youtube'></i>
+        <a href="{{escritora.link}}">Ver video sobre a escritora</a>
+    </div>
+
+    <img src="data:image/jpg;base64,{{imagem}}" class="foto">
+</div>
+{% endblock %}

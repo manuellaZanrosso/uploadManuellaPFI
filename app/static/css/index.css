@@ -1,0 +1,100 @@
+:root {
+    --cor-principal: #DFC8C6;
+    --cor-destaque: #6D3B3B;
+    --cor-sub: #C68262;
+    --cor-branco: #FFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body,
+.navbar {
+    background-color: var(--cor-principal);
+}
+
+.navbar {
+    border-bottom: 4px solid var(--cor-destaque);
+}
+
+h1,
+.card-body .card-title {
+    color: var(--cor-destaque);
+}
+
+.btn-adm {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branco);
+}
+
+.btn-adm:hover,
+.card-body {
+    background-color: var(--cor-sub);
+}
+
+.alternativa {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branco);
+    padding: 2rem 4rem 2rem 4rem;
+    border: none;
+}
+
+.foto {
+    max-width: 50rem;
+    max-height: 50rem;
+}
+
+.mensagens {
+    width: 25%;
+    margin: auto;
+    list-style: none;
+    color: white;
+    font-weight: 500;
+}
+
+.mensagens li {
+    opacity: 0;
+    border-radius: 15rem;
+    padding: 10px;
+    animation: popup 4s;
+}
+
+.mensagens .correta {
+    background-color: green;
+}
+
+.mensagens .incorreta {
+    background-color: red;
+}
+
+@keyframes popup {
+    50% {
+        opacity: 1;
+    }
+    
+    100% {
+        opacity: 0;
+    }
+}
+
+.tabela-customizada {
+    background-color: var(--cor-destaque);
+    border-collapse: collapse; /* Combinação de bordas */
+}
+
+.tabela-customizada th, .tabela-customizada td {
+    border: 1px solid #000; /* Adiciona borda a células */
+    padding: 8px;
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+.tabela-customizada th {
+    background-color: #f5f5f5; /* Cor de fundo para cabeçalhos */
+}

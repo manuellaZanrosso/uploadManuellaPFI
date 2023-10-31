@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1 class="text-center m-lg-5">Cadastrar</h1>
+
+<div class="container text-center">
+    <form action="/cadastrar" method="POST">
+        <div class="row">
+            <div class="col">
+                <label for="nome" class="form-label fs-4"><i class='bx bxs-user me-2'></i>Seu nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome aqui">
+            </div>
+            <div class="col">   
+                <label for="email" class="form-label fs-4"><i class='bx bxs-envelope me-2' ></i>Seu e-mail</label> 
+                <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com">
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col">
+                <label for="senha" class="form-label fs-4"><i class='bx bxs-lock-alt me-2'></i>Sua senha</label> 
+                <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha segura">
+            </div>
+            <div class="col">
+                <label for="senha_confirmar" class="form-label fs-4"><i class='bx bxs-lock-alt me-2'></i>Confirme sua senha</label> 
+                <input type="password" class="form-control" id="senha_confirmar" name="confirmar" placeholder="Senha segura">
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

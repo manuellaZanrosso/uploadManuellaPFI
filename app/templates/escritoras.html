@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1 class="text-center m-lg-5">Escritoras Negras</h1>
+
+<div class="container-sm text-center">
+    <div class="row">
+        <div id="escritorasCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for chunk in lista_escritoras|batch(3, 'noitem') %}
+                    <div class="carousel-item{% if loop.first %} active{% endif %}">
+                        <div class="row">
+                            {% for escritora in chunk %}
+                                <div class="col-md-4">
+                                    <a href="/escritora/{{escritora['id']}}">
+                                        <div class="card p-2 m-2">
+                                            <img src="data:image/jpg;base64,{{escritora['foto']}}" class="card-img-top" alt="Foto de escritora" style="border-radius: 100%;">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ escritora['nome'] }}</h5>
+                                                <p class="card-text">{{ escritora['mensagem'] }}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <a class="carousel-control-prev" href="#escritorasCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#escritorasCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

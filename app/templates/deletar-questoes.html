@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1 class="text-center m-lg-5">Deletar Escritoras</h1>
+<h2 class="text-center m-lg-5">Clique para remover</h2>
+
+
+<div class="container-sm text-center">
+    <div class="row">
+
+        {% for questao in lista_questoes %}
+
+        <div class="row">
+            <a href="/deletar/questao/{{questao.id}}">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{questao.pergunta}}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

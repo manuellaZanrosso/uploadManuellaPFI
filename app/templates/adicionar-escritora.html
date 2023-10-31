@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1 class="text-center m-lg-5">Adicionar escritora</h1>
+
+<div class="container text-center">
+    <form action="/adm/escritora" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col">
+                <label for="nome" class="form-label fs-4"><i class='bx bxs-user me-2'></i>Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+            </div>
+            <div class="col">
+                <label for="nome" class="form-label fs-4"><i class='bx bxs-flag-alt me-2'></i>Nacionalidade</label>
+                <input type="text" class="form-control" id="nome" name="nacionalidade" placeholder="Nacionalidade">
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col">
+                <label for="biografia" class="form-label fs-4"><i class='bx bx-text me-2'></i>Biografia</label>
+                <textarea class="form-control" id="biografia" rows="6" name="biografia"></textarea>
+            </div>
+            <div class="col">
+                <label for="data_nascimento" class="form-label fs-4"><i class='bx bxs-star me-2'></i>Data de nascimento</label> 
+                <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" placeholder="Senha segura"> 
+
+                <br>
+
+                <label for="data_falescimento" class="form-label fs-4"><i class='bx bxs-bible me-2'></i>Data de falescimento</label> 
+                <input type="date" class="form-control" id="data_falescimento" name="data_falecimento" placeholder="Senha segura">
+            </div>
+        </div>
+        <div class="row my-4">
+            <label for="foto" class="form-label fs-4"><i class='bx bx-image me-2'></i>Foto</label>
+            <input class="form-control" type="file" name="foto" id="foto">
+        </div>
+        <div class="row my-4">
+            <label for="link" class="form-label fs-4"><i class='bx bx-image me-2'></i>Link</label>
+            <input class="form-control" type="text" name="link" id="link" placeholder="https://exemplo.com">
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

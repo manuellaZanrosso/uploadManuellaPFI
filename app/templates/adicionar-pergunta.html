@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1 class="text-center m-lg-5">Adicionar Questão</h1>
+
+<div class="container text-center">
+    <form action="/adm/quiz" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col">
+                <label for="pergunta" class="form-label fs-4"><i class='bx bxs-user me-2'></i>Pergunta</label>
+                <input type="text" class="form-control" id="pergunta" name="pergunta" placeholder="Pergunta">
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col">   
+                <label for="texto-a" class="form-label fs-4"><i class='bx bxs-flag-alt me-2'></i>Alternativa A</label>
+                <input type="text" class="form-control" id="texto-a" name="texto-a" placeholder="Alternativa A">
+                <input class="form-check-input" type="checkbox" role="switch" name="a">
+            </div>
+            <div class="col">   
+                <label for="texto-b" class="form-label fs-4"><i class='bx bxs-flag-alt me-2'></i>Alternativa B</label>
+                <input type="text" class="form-control" id="texto-b" name="texto-b" placeholder="Alternativa B">
+                <input class="form-check-input" type="checkbox" role="switch" name="b">
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col">   
+                <label for="texto-c" class="form-label fs-4"><i class='bx bxs-flag-alt me-2'></i>Alternativa C</label>
+                <input type="text" class="form-control" id="texto-c" name="texto-c" placeholder="Alternativa C">
+                <input class="form-check-input" type="checkbox" role="switch" name="c">
+            </div>
+            <div class="col">   
+                <label for="texto-d" class="form-label fs-4"><i class='bx bxs-flag-alt me-2'></i>Alternativa D</label>
+                <input type="text" class="form-control" id="texto-d" name="texto-d" placeholder="Alternativa D">
+                <input class="form-check-input" type="checkbox" role="switch" name="d">
+            </div>
+        </div>
+
+        <div class="row">
+            <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

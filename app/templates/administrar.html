@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1 class="text-center m-lg-5">Administração</h1>
+
+<div class="container text-center">
+
+    <div class="row">
+        <div class="col">
+            <a class="btn-adm my-2 fs-4 p-3" href="/adm/escritora">Adicionar escritora</a>
+        </div>
+        <div class="col">
+            <a class="btn-adm fs-4 p-3" href="/adm/quiz">Adicionar questão</a>
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col">
+            <a class="btn-adm p-1 fs-4 p-3" href="/adm/escritora/deletar">Remover escritora</a>
+        </div>
+        <div class="col">
+            <a class="btn-adm p-1 fs-4 p-3" href="/adm/quiz/deletar">Remover questão</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

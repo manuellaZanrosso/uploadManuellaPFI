@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1 class="text-center m-lg-5">Deletar Escritoras</h1>
+<h2 class="text-center m-lg-5">Clique para remover</h2>
+
+
+<div class="container-sm text-center">
+    <div class="row">
+
+        {% for escritora in lista_escritoras %}
+
+        <div class="row">
+            <a href="/deletar/escritora/{{escritora.id}}">
+                <div class="card" style="width: 18rem;">
+                    <img src="data:image/jpg;base64,{{escritora.foto}}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{escritora.nome}}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

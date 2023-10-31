@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1 class="text-center m-lg-5">Quiz</h1>
+
+<div class="container text-center">
+
+    <h2 class="text-center m-lg-5 fw-bold">{{questao}}</h2>
+
+    <div class="row">
+        <div class="col">
+            <form action="/quiz-check/{{id}}/{{alternativas[0].id}}" method="POST">
+                <button class="alternativa fs-5">{{alternativas[0].texto}}</button>
+            </form>
+        </div>
+        <div class="col">
+            <form action="/quiz-check/{{id}}/{{alternativas[1].id}}" method="POST">
+                <button class="alternativa fs-5">{{alternativas[1].texto}}</button>
+            </form>
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col">
+            <form action="/quiz-check/{{id}}/{{alternativas[2].id}}" method="POST">
+                <button class="alternativa fs-5">{{alternativas[2].texto}}</button>
+            </form>
+        </div>
+        <div class="col">
+            <form action="/quiz-check/{{id}}/{{alternativas[3].id}}" method="POST">
+                <button class="alternativa fs-5">{{alternativas[3].texto}}</button>
+            </form>
+        </div>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="mensagens">
+                {% for message in messages %}
+                    <li class="{{ message[0] }}">{{ message[1] }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</div>
+{% endblock %}
